@@ -1,7 +1,7 @@
 # Stacja Pogodowa IoT
 
 Projekt stacji pogodowej oparty na **ESP32**, który mierzy temperaturę, wilgotność i ciśnienie z czujnika **BME280**, wyświetla wyniki lokalnie na **OLED SSD1306** oraz wysyła dane do chmury przez **Wi‑Fi**.  
-Na podstawie dokumentacji projekt wykorzystuje także **ThingSpeak** do wykresów oraz **Supabase** do zapisu danych i obsługi dodatkowej logiki w chmurze. fileciteturn1file15 fileciteturn1file17
+Na podstawie dokumentacji projekt wykorzystuje także **ThingSpeak** do wykresów oraz **Supabase** do zapisu danych i obsługi dodatkowej logiki w chmurze.
 
 ## Najważniejsze funkcje
 
@@ -13,7 +13,7 @@ Na podstawie dokumentacji projekt wykorzystuje także **ThingSpeak** do wykresó
 - walidacja odczytów w fizycznych zakresach,
 - buforowanie pomiarów w kolejce FIFO, gdy Wi‑Fi jest niedostępne,
 - wysyłka danych do **ThingSpeak** i **Supabase**,
-- automatyczne ponawianie połączenia Wi‑Fi z rosnącym opóźnieniem. fileciteturn1file2 fileciteturn1file7 fileciteturn1file10 fileciteturn1file12 fileciteturn1file15
+- automatyczne ponawianie połączenia Wi‑Fi z rosnącym opóźnieniem.
 
 ## Zastosowane komponenty
 
@@ -21,7 +21,7 @@ Na podstawie dokumentacji projekt wykorzystuje także **ThingSpeak** do wykresó
 - **BME280** — czujnik temperatury, wilgotności i ciśnienia
 - **OLED SSD1306 128x64**
 - magistrala **I²C**
-- łączność **Wi‑Fi** fileciteturn1file6 fileciteturn1file14
+- łączność **Wi‑Fi**
 
 ## Połączenia sprzętowe
 
@@ -30,11 +30,11 @@ Na podstawie dokumentacji projekt wykorzystuje także **ThingSpeak** do wykresó
 - adres **BME280**: `0x76`
 - adres **OLED**: `0x3C`
 - zasilanie czujnika i wyświetlacza: **3.3 V**
-- wspólna masa wszystkich modułów. fileciteturn1file6
+- wspólna masa wszystkich modułów.
 
 ## Jak działa program
 
-Po uruchomieniu system inicjalizuje magistralę I²C, wyświetlacz OLED oraz czujnik BME280. Następnie próbuje połączyć się z siecią Wi‑Fi, a w razie problemów ponawia próbę z backoffem. Odczyty są wykonywane cyklicznie co 10 sekund, sprawdzane pod kątem poprawności, wygładzane średnią kroczącą i zapisywane do kolejki. Dane są wysyłane okresowo do backendów, a punkt pomiarowy jest usuwany z bufora dopiero po skutecznym zapisie po obu stronach. fileciteturn1file15 fileciteturn1file11 fileciteturn1file12
+Po uruchomieniu system inicjalizuje magistralę I²C, wyświetlacz OLED oraz czujnik BME280. Następnie próbuje połączyć się z siecią Wi‑Fi, a w razie problemów ponawia próbę z backoffem. Odczyty są wykonywane cyklicznie co 10 sekund, sprawdzane pod kątem poprawności, wygładzane średnią kroczącą i zapisywane do kolejki. Dane są wysyłane okresowo do backendów, a punkt pomiarowy jest usuwany z bufora dopiero po skutecznym zapisie po obu stronach.
 
 ## Parametry programu
 
@@ -45,7 +45,7 @@ Po uruchomieniu system inicjalizuje magistralę I²C, wyświetlacz OLED oraz czu
 - zakresy walidacji:
   - temperatura: `-40°C ... 85°C`
   - wilgotność: `0% ... 100%`
-  - ciśnienie: `300 hPa ... 1100 hPa` fileciteturn1file7
+  - ciśnienie: `300 hPa ... 1100 hPa`
 
 ## Wymagania
 
@@ -60,7 +60,7 @@ Po uruchomieniu system inicjalizuje magistralę I²C, wyświetlacz OLED oraz czu
   - `WiFi`
   - `HTTPClient`
 - konto i konfiguracja w **ThingSpeak**,
-- konto i tabela w **Supabase**. fileciteturn1file2 fileciteturn1file14
+- konto i tabela w **Supabase**.
 
 ## Konfiguracja
 
@@ -91,13 +91,11 @@ Nie warto trzymać kluczy na stałe w repozytorium publicznym.
 Projekt zapisuje dane do dwóch serwisów:
 
 - **ThingSpeak** — do wizualizacji wykresów,
-- **Supabase** — do przechowywania rekordów i dodatkowej logiki po stronie chmury. fileciteturn1file17 fileciteturn1file9
-
-W dokumentacji widać też działające wykresy na ThingSpeak oraz poprawny zapis danych w Supabase. fileciteturn1file17 fileciteturn1file14
+- **Supabase** — do przechowywania rekordów i dodatkowej logiki po stronie chmury.
 
 ## Uwagi
 
-W projekcie **nie ma pomiaru pyłów PM2.5**, ponieważ używany jest wyłącznie czujnik BME280. fileciteturn1file14
+W projekcie **nie ma pomiaru pyłów PM2.5**, ponieważ używany jest wyłącznie czujnik BME280.
 
 ## Licencja
 This project is licensed under the MIT License.
