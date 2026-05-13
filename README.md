@@ -75,8 +75,6 @@ const char* WIFI_PASS = "TWOJE_HASLO_WIFI";
 #define SUPABASE_APIKEY "TWOJ_SUPABASE_SERVICE_KEY"
 ```
 
-Nie warto trzymać kluczy na stałe w repozytorium publicznym.
-
 ## Uruchomienie
 
 1. Podłącz ESP32, BME280 i OLED zgodnie z opisem wyprowadzeń.
