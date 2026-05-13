@@ -33,7 +33,7 @@ const char* WIFI_PASS = "TWOJE_HASLO_WIFI";
 
 // ---------- PARAMETRY SYSTEMU ----------
 const unsigned long READ_INTERVAL_MS = 10000UL;   // odczyt czujnika co 10s
-const unsigned long QUEUE_FLUSH_INTERVAL_MS = 10000UL; // wysyłka do ThingSpeak i Supabase co 10 minut
+const unsigned long QUEUE_FLUSH_INTERVAL_MS = 600000UL; // wysyłka do ThingSpeak i Supabase co 10 minut
 const unsigned long WIFI_BASE_RETRY_MS = 2000UL;
 const unsigned long WIFI_MAX_RETRY_MS  = 60000UL;
 
